@@ -1,0 +1,6 @@
+node_modules/
+dist/
+.env
+.env.local
+tmp/avatar-runs/
+npm-debug.log*
