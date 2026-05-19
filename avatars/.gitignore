@@ -4,3 +4,5 @@ dist/
 .env.local
 tmp/avatar-runs/
 npm-debug.log*
+
+base-input
