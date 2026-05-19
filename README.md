@@ -1,6 +1,6 @@
 # football
 
-API Express em TypeScript para transformar uma foto em um JSON de configuração do `react-nice-avatar` usando Gemini Structured Output.
+API Express em TypeScript para transformar uma foto em uma configuração de avatar baseada em [`decentraland/avatar-assets`](https://github.com/decentraland/avatar-assets) usando Gemini Structured Output.
 
 ## Setup
 
@@ -55,30 +55,28 @@ Resposta:
 ```json
 {
   "config": {
-    "sex": "man",
-    "faceColor": "#F9C9B6",
-    "earSize": "small",
-    "hairColor": "#000000",
-    "hairStyle": "normal",
-    "hairColorRandom": false,
-    "hatColor": "#000000",
-    "hatStyle": "none",
-    "eyeStyle": "circle",
-    "eyeBrowStyle": "up",
-    "glassesStyle": "none",
-    "noseStyle": "short",
-    "mouthStyle": "smile",
-    "shirtStyle": "hoody",
-    "shirtColor": "#6BD9E9",
-    "bgColor": "#9287FF",
-    "isGradient": false
+    "bodyShape": "BaseMale",
+    "skin": { "color": { "r": 0.78, "g": 0.55, "b": 0.42, "a": 1 } },
+    "hair": { "color": { "r": 0.08, "g": 0.06, "b": 0.04, "a": 1 } },
+    "eyes": { "color": { "r": 0.12, "g": 0.1, "b": 0.08, "a": 1 } },
+    "wearables": {
+      "hair": "relaxed_hair",
+      "eyes": "eyes_00",
+      "eyebrows": "eyebrows_00",
+      "mouth": "mouth_03",
+      "upper_body": "simple_blue_tshirt",
+      "lower_body": "soccer_pants",
+      "feet": "sneakers",
+      "facial_hair": "none"
+    },
+    "backgroundColor": "#E5E7EB"
   }
 }
 ```
 
 ### Debug: gerar JSON e PNG
 
-Chama Gemini, salva a foto original, salva o JSON e renderiza um PNG 512x512 com Playwright.
+Chama Gemini, salva a foto original, salva o JSON, salva um `decentraland-profile.json` com URNs `urn:decentraland:off-chain:base-avatars:*` e renderiza um PNG 3x4 de debug com Playwright.
 
 ```bash
 curl -X POST http://localhost:3000/api/avatar/render \
@@ -93,6 +91,14 @@ curl -X POST http://localhost:3000/api/avatar/render \
   -F "styleSex=man"
 ```
 
+Também pode receber a configuração Decentraland pronta como JSON e pular Gemini:
+
+```bash
+curl -X POST http://localhost:3000/api/avatar/render \
+  -H "Content-Type: application/json" \
+  -d '{"bodyShape":"BaseMale","skin":{"color":{"r":0.58,"g":0.38,"b":0.25,"a":1}},"hair":{"color":{"r":0.15,"g":0.12,"b":0.1,"a":1}},"eyes":{"color":{"r":0.18,"g":0.1,"b":0.05,"a":1}},"wearables":{"hair":"semi_afro","eyes":"eyes_00","eyebrows":"eyebrows_00","mouth":"mouth_00","upper_body":"simple_blue_tshirt","lower_body":"soccer_pants","feet":"sneakers","facial_hair":"beard"},"backgroundColor":"#BEAA82"}'
+```
+
 Resposta:
 
 ```json
@@ -103,6 +109,8 @@ Resposta:
     "runDir": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/...",
     "inputPath": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/.../input.jpg",
     "configPath": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/.../avatar-config.json",
+    "profilePath": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/.../decentraland-profile.json",
+    "previewPath": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/.../avatar-preview.html",
     "avatarPath": "/Users/lucas/Documents/MINES/football/tmp/avatar-runs/.../avatar.png"
   }
 }
@@ -125,4 +133,4 @@ Erros usam o formato:
 
 ## Config
 
-As opções aceitas estão documentadas em [docs/react-nice-avatar-config.md](docs/react-nice-avatar-config.md).
+A configuração usa apenas assets de `decentraland/avatar-assets`. O catálogo curado fica em `avatars/src/services/decentralandAssets.catalog.ts`; para cada wearable selecionado, a API gera o URN Decentraland correspondente no arquivo de perfil salvo pelo endpoint `/render`.

@@ -1,0 +1,20 @@
+{
+  "name": "french_beard",
+  "i18n": {
+    "en": "French Moustache",
+    "es": "Bigote Francés"
+  },
+  "tags": [
+    "unisex",
+    "facial_hair",
+    "French",
+    "Moustache"
+  ],
+  "category": "facial_hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "M_FacialHair_FrenchMoustache.glb"
+    }
+  ]
+}

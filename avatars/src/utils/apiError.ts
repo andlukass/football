@@ -2,6 +2,7 @@ import type { NextFunction, Request, Response } from "express";
 
 export type ApiErrorCode =
   | "INVALID_UPLOAD"
+  | "INVALID_AVATAR_CONFIG"
   | "GEMINI_API_KEY_MISSING"
   | "GEMINI_REQUEST_FAILED"
   | "STRUCTURED_OUTPUT_INVALID"

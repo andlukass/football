@@ -1,0 +1,24 @@
+{
+  "name": "casual_hair_02",
+  "i18n": {
+    "en": "Short thick wavy hair with raised front",
+    "es": "Corte a lo Elvis"
+  },
+  "tags": [
+    "unisex",
+    "hair",
+    "Elvis",
+    "Wannabe"
+  ],
+  "category": "hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "Hair_Standard_02.glb"
+    },
+    {
+      "type": "dcl://base-avatars/BaseFemale",
+      "model": "Hair_Standard_02.glb"
+    }
+  ]
+}

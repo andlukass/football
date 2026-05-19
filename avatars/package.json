@@ -18,9 +18,7 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "multer": "^2.1.1",
-    "react": "^19.2.6",
-    "react-dom": "^19.2.6",
-    "react-nice-avatar": "^1.5.0",
+    "three": "^0.184.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
@@ -28,8 +26,6 @@
     "@types/express": "^5.0.6",
     "@types/multer": "^2.1.0",
     "@types/node": "^25.9.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
     "nodemon": "^3.1.14",
     "playwright": "^1.60.0",
     "tsx": "^4.22.2",

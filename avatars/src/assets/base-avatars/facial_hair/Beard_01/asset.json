@@ -1,0 +1,19 @@
+{
+  "name": "beard",
+  "i18n": {
+    "en": "Beard",
+    "es": "Barba"
+  },
+  "tags": [
+    "unisex",
+    "facial_hair",
+    "Beard"
+  ],
+  "category": "facial_hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "M_Beard.glb"
+    }
+  ]
+}

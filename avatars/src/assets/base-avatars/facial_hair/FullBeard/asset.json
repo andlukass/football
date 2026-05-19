@@ -1,0 +1,20 @@
+{
+  "name": "full_beard",
+  "i18n": {
+    "en": "Full Beard",
+    "es": "Barba Completa"
+  },
+  "tags": [
+    "unisex",
+    "facial_hair",
+    "Full",
+    "Beard"
+  ],
+  "category": "facial_hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "M_FacialHair_FullBeard.glb"
+    }
+  ]
+}

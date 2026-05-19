@@ -1,0 +1,19 @@
+{
+  "name": "horseshoe_beard",
+  "i18n": {
+    "en": "Horseshoe",
+    "es": "Horseshoe"
+  },
+  "tags": [
+    "unisex",
+    "facial_hair",
+    "Horseshoe"
+  ],
+  "category": "facial_hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "M_FacialHair_LongMoustache.glb"
+    }
+  ]
+}

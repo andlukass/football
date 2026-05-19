@@ -1,0 +1,19 @@
+{
+  "name": "goatee_beard",
+  "i18n": {
+    "en": "Goatee",
+    "es": "Goatee"
+  },
+  "tags": [
+    "unisex",
+    "facial_hair",
+    "Goatee"
+  ],
+  "category": "facial_hair",
+  "main": [
+    {
+      "type": "dcl://base-avatars/BaseMale",
+      "model": "M_FacialHair_Goatee.glb"
+    }
+  ]
+}
